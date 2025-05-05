@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>My Portfolio</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#main" class="nav-link active"><i class="fas fa-home"></i> Main</a>
+                <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a>
+                <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+            </div>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Main Section -->
+            <section id="main" class="section active">
+                <div class="section-header">
+                    <h1>Professional Summary</h1>
+                </div>
+                <div class="card-container">
+                    <div class="stats-card">
+                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                        <div class="stat-count">12</div>
+                        <div class="stat-title">Web Applications</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="stat-count">5</div>
+                        <div class="stat-title">Mobile Applications</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="stat-count">8</div>
+                        <div class="stat-title">UI/UX Projects</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-count">18</div>
+                        <div class="stat-title">Satisfied Clients</div>
+                    </div>
+                </div>
+                
+                <div class="cover-letter-section">
+                    <h2>About Me</h2>
+                    <p class="summary-text">
+                        Experienced full-stack developer with a passion for creating elegant solutions 
+                        to complex problems. Specializing in responsive web applications and intuitive 
+                        mobile experiences with a focus on performance and user experience.
+                    </p>
+                    <button id="cover-letter-btn" class="view-btn">View Cover Letter</button>
+                </div>
+                
+                <div class="skills-section">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skill">HTML5 / CSS3</div>
+                            <div class="skill">JavaScript / TypeScript</div>
+                            <div class="skill">React / Vue</div>
+                            <div class="skill">Responsive Design</div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill">Node.js</div>
+                            <div class="skill">Python / Django</div>
+                            <div class="skill">PHP / Laravel</div>
+                            <div class="skill">RESTful APIs</div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Mobile</h3>
+                            <div class="skill">React Native</div>
+                            <div class="skill">Flutter</div>
+                            <div class="skill">Swift</div>
+                            <div class="skill">Kotlin</div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Other</h3>
+                            <div class="skill">Git / GitHub</div>
+                            <div class="skill">Docker</div>
+                            <div class="skill">AWS / Azure</div>
+                            <div class="skill">CI/CD</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <div class="section-header">
+                    <h1>Education</h1>
+                </div>
+                <div class="list-container">
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Master of Computer Science</h3>
+                            <p>Stanford University</p>
+                            <p class="date">2018 - 2020</p>
+                        </div>
+                        <button class="view-btn" data-id="edu1">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Bachelor of Science in Software Engineering</h3>
+                            <p>MIT</p>
+                            <p class="date">2014 - 2018</p>
+                        </div>
+                        <button class="view-btn" data-id="edu2">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>AWS Certified Solutions Architect</h3>
+                            <p>Amazon Web Services</p>
+                            <p class="date">2021</p>
+                        </div>
+                        <button class="view-btn" data-id="edu3">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Professional Scrum Master</h3>
+                            <p>Scrum.org</p>
+                            <p class="date">2020</p>
+                        </div>
+                        <button class="view-btn" data-id="edu4">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Advanced React & Redux</h3>
+                            <p>Udemy</p>
+                            <p class="date">2019</p>
+                        </div>
+                        <button class="view-btn" data-id="edu5">View</button>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn next">Next</button>
+                    <button class="pagination-btn last">Last</button>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <div class="section-header">
+                    <h1>Experience</h1>
+                </div>
+                <div class="list-container">
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Senior Software Engineer</h3>
+                            <p>Google</p>
+                            <p class="date">2020 - Present</p>
+                        </div>
+                        <button class="view-btn" data-id="exp1">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Frontend Developer</h3>
+                            <p>Amazon</p>
+                            <p class="date">2018 - 2020</p>
+                        </div>
+                        <button class="view-btn" data-id="exp2">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Full Stack Developer</h3>
+                            <p>Microsoft</p>
+                            <p class="date">2016 - 2018</p>
+                        </div>
+                        <button class="view-btn" data-id="exp3">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>Mobile App Developer</h3>
+                            <p>Apple</p>
+                            <p class="date">2014 - 2016</p>
+                        </div>
+                        <button class="view-btn" data-id="exp4">View</button>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-content">
+                            <h3>UI/UX Designer</h3>
+                            <p>Adobe</p>
+                            <p class="date">2012 - 2014</p>
+                        </div>
+                        <button class="view-btn" data-id="exp5">View</button>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn next">Next</button>
+                    <button class="pagination-btn last">Last</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Cover Letter Modal -->
+    <div id="cover-letter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cover Letter</h2>
+            <div class="modal-body">
+                <p>Dear Hiring Manager,</p>
+                <p>I am writing to express my interest in the [Position] role at your company. With over 8 years of experience in software development and a passion for creating exceptional digital experiences, I believe I would be a valuable addition to your team.</p>
+                <p>Throughout my career, I have successfully delivered 12 web applications and 5 mobile applications, consistently exceeding client expectations and business objectives. My technical expertise spans both frontend and backend technologies, allowing me to approach projects from a holistic perspective.</p>
+                <p>What sets me apart is my commitment to writing clean, maintainable code and my ability to translate complex requirements into elegant solutions. I thrive in collaborative environments where innovation is encouraged, and I am constantly seeking opportunities to expand my skill set.</p>
+                <p>I am particularly drawn to your company because of your focus on [Company Value/Project], which aligns perfectly with my professional interests and expertise. I am confident that my technical skills, combined with my problem-solving abilities and attention to detail, would make me a strong fit for your team.</p>
+                <p>I would welcome the opportunity to discuss how my background, skills, and experiences would benefit your organization. Thank you for considering my application.</p>
+                <p>Sincerely,</p>
+                <p>Your Name</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Detail Modal -->
+    <div id="education-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="education-modal-title">Education Details</h2>
+            <div class="modal-body" id="education-modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Detail Modal -->
+    <div id="experience-modal" class="modal">
+        <div class="modal-content modal-lg">
+            <span class="close">&times;</span>
+            <h2 id="experience-modal-title">Experience Details</h2>
+            <div class="experience-tabs">
+                <button class="tab-btn active" data-tab="summary">Summary</button>
+                <button class="tab-btn" data-tab="projects">Projects</button>
+                <button class="tab-btn" data-tab="achievements">Achievements</button>
+            </div>
+            <div class="tab-content">
+                <div id="summary" class="tab-pane active">
+                    <!-- Summary content will be populated by JavaScript -->
+                </div>
+                <div id="projects" class="tab-pane">
+                    <!-- Projects content will be populated by JavaScript -->
+                </div>
+                <div id="achievements" class="tab-pane">
+                    <!-- Achievements content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="project-modal-title">Project Details</h2>
+            <div class="modal-body" id="project-modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <div class="modal-body">
+                <div class="settings-group">
+                    <h3>Theme</h3>
+                    <div class="theme-options">
+                        <button class="theme-option light active" data-theme="light">
+                            <div class="theme-preview light-preview"></div>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-option dark" data-theme="dark">
+                            <div class="theme-preview dark-preview"></div>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="apply-btn">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

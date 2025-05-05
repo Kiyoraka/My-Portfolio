@@ -15,15 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal Elements
     const coverLetterBtn = document.getElementById('cover-letter-btn');
     const coverLetterModal = document.getElementById('cover-letter-modal');
-    const educationModal = document.getElementById('education-modal');
     const experienceModal = document.getElementById('experience-modal');
     const projectModal = document.getElementById('project-modal');
     const settingsModal = document.getElementById('settings-modal');
     const closeButtons = document.querySelectorAll('.close');
     
     // Modal Content Elements
-    const educationModalTitle = document.getElementById('education-modal-title');
-    const educationModalContent = document.getElementById('education-modal-content');
     const experienceModalTitle = document.getElementById('experience-modal-title');
     const projectModalTitle = document.getElementById('project-modal-title');
     const projectModalContent = document.getElementById('project-modal-content');
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const applyBtn = document.querySelector('.apply-btn');
     
     // View Buttons
-    const educationViewButtons = document.querySelectorAll('#education .view-btn');
     const experienceViewButtons = document.querySelectorAll('#experience .view-btn');
 
     // Initialize the application
@@ -76,11 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close modal when clicking outside content
         window.addEventListener('click', handleModalBackgroundClick);
-        
-        // Education view buttons
-        educationViewButtons.forEach(button => {
-            button.addEventListener('click', handleEducationView);
-        });
         
         // Experience view buttons
         experienceViewButtons.forEach(button => {
@@ -145,25 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeModal(modal);
             }
         });
-    }
-
-    // Education View Handler
-    function handleEducationView() {
-        const id = this.getAttribute('data-id');
-        
-        // Use the imported education module function if available
-        if (window.getEducationData) {
-            const educationData = window.getEducationData(id);
-            educationModalTitle.textContent = educationData.title;
-            educationModalContent.innerHTML = educationData.content;
-        } else {
-            // Fallback to legacy function
-            const educationData = getEducationData(id);
-            educationModalTitle.textContent = educationData.title;
-            educationModalContent.innerHTML = educationData.content;
-        }
-        
-        openModal(educationModal);
     }
 
     // Experience View Handler
@@ -248,165 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.theme-option[data-theme="dark"]').classList.add('active');
             document.querySelector('.theme-option[data-theme="light"]').classList.remove('active');
         }
-    }
-
-    // Data Functions
-    function getEducationData(id) {
-        const educationData = {
-            'edu1': {
-                title: 'Master of Computer Science',
-                content: `
-                    <div class="education-details">
-                        <p><strong>Institution:</strong> Stanford University</p>
-                        <p><strong>Duration:</strong> 2018 - 2020</p>
-                        <p><strong>GPA:</strong> 3.92/4.0</p>
-                        <p><strong>Area of Focus:</strong> Machine Learning and Artificial Intelligence</p>
-                        
-                        <h3>Key Courses</h3>
-                        <ul>
-                            <li>Advanced Algorithms</li>
-                            <li>Machine Learning</li>
-                            <li>Deep Learning</li>
-                            <li>Computer Vision</li>
-                            <li>Natural Language Processing</li>
-                            <li>Distributed Systems</li>
-                        </ul>
-                        
-                        <h3>Thesis</h3>
-                        <p>"Optimizing Neural Networks for Edge Computing Applications"</p>
-                        <p>Developed techniques to reduce the computational requirements of neural networks while maintaining accuracy, enabling deployment on resource-constrained devices.</p>
-                        
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li>Dean's List: All semesters</li>
-                            <li>Teaching Assistant for Introduction to Machine Learning</li>
-                            <li>Published 2 papers in peer-reviewed conferences</li>
-                        </ul>
-                    </div>
-                `
-            },
-            'edu2': {
-                title: 'Bachelor of Science in Software Engineering',
-                content: `
-                    <div class="education-details">
-                        <p><strong>Institution:</strong> MIT</p>
-                        <p><strong>Duration:</strong> 2014 - 2018</p>
-                        <p><strong>GPA:</strong> 3.85/4.0</p>
-                        <p><strong>Area of Focus:</strong> Software Development and Systems Design</p>
-                        
-                        <h3>Key Courses</h3>
-                        <ul>
-                            <li>Data Structures and Algorithms</li>
-                            <li>Object-Oriented Programming</li>
-                            <li>Database Systems</li>
-                            <li>Web Development</li>
-                            <li>Software Engineering Principles</li>
-                            <li>Computer Networks</li>
-                        </ul>
-                        
-                        <h3>Capstone Project</h3>
-                        <p>"Real-time Collaborative Code Editor with Integrated Version Control"</p>
-                        <p>Developed a web-based collaborative code editor that allowed multiple users to edit code simultaneously with automatic conflict resolution and integrated Git functionality.</p>
-                        
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li>Graduated with Honors</li>
-                            <li>President of the Computer Science Club</li>
-                            <li>2nd Place in MIT Hackathon 2017</li>
-                        </ul>
-                    </div>
-                `
-            },
-            'edu3': {
-                title: 'AWS Certified Solutions Architect',
-                content: `
-                    <div class="education-details">
-                        <p><strong>Institution:</strong> Amazon Web Services</p>
-                        <p><strong>Date:</strong> 2021</p>
-                        <p><strong>Credential ID:</strong> AWS-ASA-123456</p>
-                        <p><strong>Expiration:</strong> 2024</p>
-                        
-                        <h3>Skills Certified</h3>
-                        <ul>
-                            <li>Designing distributed systems on AWS</li>
-                            <li>Planning and deploying high-availability architectures</li>
-                            <li>Implementing security controls and compliance requirements</li>
-                            <li>Cost optimization strategies</li>
-                            <li>Migration planning and execution</li>
-                        </ul>
-                        
-                        <h3>Projects Implemented Using AWS</h3>
-                        <ul>
-                            <li>Designed and deployed a serverless e-commerce platform</li>
-                            <li>Implemented CI/CD pipelines for automated deployment</li>
-                            <li>Migrated on-premise applications to AWS cloud</li>
-                        </ul>
-                    </div>
-                `
-            },
-            'edu4': {
-                title: 'Professional Scrum Master',
-                content: `
-                    <div class="education-details">
-                        <p><strong>Institution:</strong> Scrum.org</p>
-                        <p><strong>Date:</strong> 2020</p>
-                        <p><strong>Credential ID:</strong> PSM-123456</p>
-                        
-                        <h3>Skills Certified</h3>
-                        <ul>
-                            <li>Facilitating Scrum events</li>
-                            <li>Coaching development teams</li>
-                            <li>Removing impediments</li>
-                            <li>Promoting Scrum practices</li>
-                            <li>Sprint planning and retrospectives</li>
-                        </ul>
-                        
-                        <h3>Implementation Experience</h3>
-                        <p>Successfully implemented Scrum methodology in 3 development teams, resulting in:</p>
-                        <ul>
-                            <li>30% increase in development velocity</li>
-                            <li>Improved team collaboration and communication</li>
-                            <li>Reduced time-to-market for new features</li>
-                            <li>Enhanced product quality through regular feedback cycles</li>
-                        </ul>
-                    </div>
-                `
-            },
-            'edu5': {
-                title: 'Advanced React & Redux',
-                content: `
-                    <div class="education-details">
-                        <p><strong>Institution:</strong> Udemy</p>
-                        <p><strong>Date:</strong> 2019</p>
-                        <p><strong>Instructor:</strong> Stephen Grider</p>
-                        <p><strong>Certificate ID:</strong> UC-123456</p>
-                        
-                        <h3>Skills Acquired</h3>
-                        <ul>
-                            <li>Advanced React component patterns</li>
-                            <li>Redux state management</li>
-                            <li>Middleware and async actions</li>
-                            <li>Testing React applications</li>
-                            <li>React Hooks and Context API</li>
-                            <li>Performance optimization</li>
-                        </ul>
-                        
-                        <h3>Projects Completed</h3>
-                        <ul>
-                            <li>Authentication system with JWT</li>
-                            <li>Streaming application with RTMP server</li>
-                            <li>Testing suite with Jest and Enzyme</li>
-                            <li>Higher-order components implementation</li>
-                        </ul>
-                    </div>
-                `
-            }
-        };
-        
-        return educationData[id] || { 
-            title: 'Education Details',
-            content: '<p>No details available for this education.</p>'
-        };
     }
 
     function getExperienceData(id) {

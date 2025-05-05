@@ -4,9 +4,9 @@
  */
 
 // Import education modules
-import HNDCSDEducation from '../education/HNDCSD.js';
-import ScrumMasterEducation from '../education/ScrumMaster.js';
-import ReactReduxEducation from '../education/ReactRedux.js';
+import HNDCSDEducation from './education/HNDCSD.js';
+import ScrumMasterEducation from './education/ScrumMaster.js';
+import ReactReduxEducation from './education/ReactRedux.js';
 
 // Education data collection - add all education modules here
 const educationModules = [

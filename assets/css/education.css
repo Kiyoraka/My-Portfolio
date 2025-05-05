@@ -1,0 +1,195 @@
+/* Education Section Styles */
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.education-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.education-card:hover::after {
+    opacity: 1;
+}
+
+.education-card-content {
+    flex: 1;
+}
+
+.education-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.education-institution {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.education-date {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--primary-light);
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.education-actions {
+    margin-left: 15px;
+}
+
+/* Education Details Modal */
+.education-details {
+    padding: 10px 0;
+}
+
+.education-details p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.education-details h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 25px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.education-details ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.education-details li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+.education-details li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+.pagination-btn {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    height: 36px;
+    min-width: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    padding: 0 12px;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.pagination-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-color);
+}
+
+.pagination-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination-btn.next, .pagination-btn.last {
+    padding: 0 15px;
+}
+
+/* Certificate Card Variation */
+.certificate-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.certificate-card .education-title {
+    display: flex;
+    align-items: center;
+}
+
+.certificate-card .education-title::before {
+    content: '\f0a3';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 0.95rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .education-actions {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .education-actions .view-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

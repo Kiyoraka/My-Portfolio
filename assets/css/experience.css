@@ -1,0 +1,305 @@
+/* Experience Section Styles */
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--primary-color);
+    opacity: 0.8;
+}
+
+.experience-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.experience-card-content {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.experience-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.experience-company {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.experience-company::before {
+    content: '\f1ad';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.experience-date {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--primary-light);
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.experience-actions {
+    margin-left: 15px;
+}
+
+/* Experience Details Modal */
+.experience-tabs {
+    display: flex;
+    gap: 1px;
+    background: var(--border-color);
+    border-radius: 8px;
+    padding: 3px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+.tab-btn:hover {
+    color: var(--text-color);
+}
+
+.tab-btn.active {
+    background: var(--card-bg);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-content {
+    position: relative;
+    min-height: 300px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Summary Tab */
+.experience-summary {
+    padding: 10px 0;
+}
+
+.experience-summary p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.experience-summary h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 25px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.experience-summary ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.experience-summary li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+.experience-summary li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Projects Tab */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-item {
+    background: var(--primary-light);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateX(5px);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Achievements Tab */
+.achievement-list-container {
+    padding: 10px 0;
+}
+
+.achievement-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievement-item {
+    position: relative;
+    padding: 12px 0 12px 30px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.achievement-item::before {
+    content: '\f058';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+/* Project Details Modal */
+.project-details {
+    padding: 10px 0;
+}
+
+.project-details p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.project-details h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 25px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.project-details ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.project-details li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+.project-details li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .experience-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience-actions {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .experience-actions .view-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .experience-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    
+    .tab-btn {
+        white-space: nowrap;
+        flex: none;
+        min-width: 120px;
+    }
+}

@@ -4,8 +4,8 @@
  */
 
 // Import experience modules
-import GoogleExperience from '../experience/Google.js';
-import AmazonExperience from '../experience/Amazon.js';
+import GoogleExperience from './experience/Google.js';
+import AmazonExperience from './experience/Amazon.js';
 
 // Experience data collection - add all experience modules here
 const experienceModules = [

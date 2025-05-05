@@ -5,20 +5,16 @@
 
 // Import education modules
 import HNDCSDEducation from '../education/HNDCSD.js';
+import ScrumMasterEducation from '../education/ScrumMaster.js';
+import ReactReduxEducation from '../education/ReactRedux.js';
 
-// Education data collection
+// Education data collection - add all education modules here
 const educationModules = [
     HNDCSDEducation,
+    ScrumMasterEducation,
+    ReactReduxEducation
     // Add more education modules as needed
 ];
-
-// Add module IDs to education data
-educationModules.forEach(module => {
-    legacyEducationData[module.id] = {
-        title: module.title,
-        content: module.getDetailedContent()
-    };
-});
 
 /**
  * Get education data by ID
@@ -26,8 +22,9 @@ educationModules.forEach(module => {
  * @returns {Object} Education data object
  */
 export function getEducationData(id) {
-    // First check if we have a module with this ID
+    // Find the module with this ID
     const module = educationModules.find(m => m.id === id);
+    
     if (module) {
         return {
             title: module.title,
@@ -35,8 +32,8 @@ export function getEducationData(id) {
         };
     }
     
-    // Fall back to legacy data
-    return legacyEducationData[id] || { 
+    // If no module found, return default message
+    return { 
         title: 'Education Details',
         content: '<p>No details available for this education.</p>'
     };
@@ -44,15 +41,18 @@ export function getEducationData(id) {
 
 /**
  * Initialize the education section
- * Adds event listeners and loads education cards
+ * Loads all education cards from modules
  */
 export function initializeEducation() {
-    // Add HNDCSD to the education list if not already present
     const educationContainer = document.querySelector('.education-container');
+    
     if (educationContainer) {
-        // Check if we need to add the HNDCSD card
-        if (!document.querySelector(`[data-id="${HNDCSDEducation.id}"]`)) {
-            const cardData = HNDCSDEducation.getCardData();
+        // Clear existing education cards
+        educationContainer.innerHTML = '';
+        
+        // Add education cards from modules
+        educationModules.forEach(module => {
+            const cardData = module.getCardData();
             
             // Create the card element
             const card = document.createElement('div');
@@ -67,7 +67,7 @@ export function initializeEducation() {
                     <div class="education-date">${cardData.duration}</div>
                 </div>
                 <div class="education-actions">
-                    <button class="view-btn" data-id="${HNDCSDEducation.id}">
+                    <button class="view-btn" data-id="${module.id}">
                         <i class="fas fa-eye"></i> View
                     </button>
                 </div>
@@ -76,7 +76,7 @@ export function initializeEducation() {
             // Add to container
             educationContainer.appendChild(card);
             
-            // Add event listener to the new button
+            // Add event listener to the button
             card.querySelector('.view-btn').addEventListener('click', function() {
                 const educationModal = document.getElementById('education-modal');
                 const educationModalTitle = document.getElementById('education-modal-title');
@@ -90,7 +90,7 @@ export function initializeEducation() {
                 educationModal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
             });
-        }
+        });
     }
 }
 
